@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa IP - Akun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- 1. KONFIGURASI LAYAR HP (325px x 95vh) --- */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #F5F5F0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            min-height: 100vh; 
+        }
+
+        .mobile-wrapper { 
+            width: 325px;
+            height: 98vh;
+            background-color: white; 
+            border-radius: 45px; 
+             
+            overflow: hidden; 
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Area Konten Scrollable */
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            scrollbar-width: none; 
+            padding-bottom: 80px; /* Ruang untuk nav bawah */
+        }
+        .scrollable-content::-webkit-scrollbar { display: none; }
+
+        /* --- 2. STYLE KOMPONEN --- */
+        .header { 
+            padding: 40px 20px 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 15px; 
+            border-bottom: 1px solid #f5f5f5;
+            background: linear-gradient(to bottom, #f9f6ff, #ffffff);
+        }
+        
+        .back-btn-container { width: 100%; display: flex; justify-content: flex-start; margin-bottom: -10px; }
+        .back-btn { 
+            width: 35px; height: 35px; background: white; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: #333; 
+        }
+
+        .profile-pic { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #C19EFE; }
+        
+        .user-info { text-align: center; }
+        .user-info h3 { margin: 0; font-size: 18px; outline: none; }
+        .user-info p { margin: 0; font-size: 12px; color: #888; outline: none; }
+
+        .content { padding: 20px; }
+        .info-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f5f5f5; }
+        .info-row label { color: #888; font-size: 13px; }
+        
+        .editable-text { font-weight: 500; color: #333; outline: none; font-size: 13px; text-align: right; border-radius: 5px; padding: 2px 5px; }
+        .editable-text:focus { background: #F3E8FF; color: #7F3DFF; }
+
+        .actions { margin-top: 25px; display: flex; flex-direction: column; gap: 12px; }
+        .btn-save { background: #C19EFE; color: white; border: none; padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer; text-align: center; font-size: 14px; box-shadow: 0 4px 12px rgba(193, 158, 254, 0.3); }
+        .btn-logout { background: white; color: #ff4757; border: 1.5px solid #ff4757; padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; }
+
+        /* --- 3. BOTTOM NAV (STICKY DI DALAM HP) --- */
+        .bottom-nav { 
+            position: absolute; 
+            bottom: 0; 
+            width: 100%; 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            display: flex; 
+            justify-content: space-around; 
+            padding: 12px 0 20px; 
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05); 
+            border-top: 1px solid #eee;
+        }
+        .nav-item { color: #ccc; font-size: 22px; text-decoration: none; }
+        .nav-item.active { color: #7F3DFF; }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-wrapper">
+        <div class="scrollable-content">
+            <div class="header">
+                <div class="back-btn-container">
+                    <a href="sewaip-beranda.html" class="back-btn"><i class="fas fa-chevron-left"></i></a>
+                </div>
+                <img src="avatar.jpg" class="profile-pic" alt="User">
+                <div class="user-info">
+                    <h3 contenteditable="true">Piabaee</h3>
+                    <p contenteditable="true">piabaeeimup@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="info-row">
+                    <label>Nama Lengkap</label>
+                    <span class="editable-text" contenteditable="true">Piabaee</span>
+                </div>
+                <div class="info-row">
+                    <label>No. Telepon</label>
+                    <span class="editable-text" contenteditable="true">0821872645890</span>
+                </div>
+                <div class="info-row">
+                    <label>Email</label>
+                    <span class="editable-text" contenteditable="true">piabaeeimup@gmail.com</span>
+                </div>
+
+                <div class="actions">
+                    <button class="btn-save" onclick="saveData()">Simpan Perubahan</button>
+                    <a href="sewaip-index.html" class="btn-logout">
+                        <i class="fas fa-sign-out-alt"></i> Log Out
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="sewaip-beranda.html" class="nav-item"><i class="fas fa-home"></i></a>
+            <a href="sewaip-akun.html" class="nav-item active"><i class="fas fa-user"></i></a>
+        </div>
+    </div>
+
+    <script>
+        function saveData() {
+            const btn = document.querySelector('.btn-save');
+            btn.innerText = "Menyimpan...";
+            
+            setTimeout(() => {
+                alert("Profil berhasil diperbarui!");
+                btn.innerText = "Simpan Perubahan";
+            }, 800);
+        }
+    </script>
+
+</body>
+</html>

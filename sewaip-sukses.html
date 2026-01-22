@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa IP - Pembayaran Sukses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- 1. KONFIGURASI LAYAR HP (325px x 95vh) --- */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #F5F5F0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            min-height: 100vh; 
+        }
+
+        .mobile-wrapper { 
+            width: 325px;
+            height: 98vh;
+            background-color: #2D126B; /* Warna Ungu Tua */
+            border-radius: 45px; 
+            
+            overflow: hidden; 
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* --- 2. STYLE KARTU SUKSES --- */
+        .card { 
+            background: white; 
+            width: 100%; 
+            border-radius: 30px; 
+            padding: 50px 20px 25px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .check-icon { 
+            position: absolute; 
+            top: -35px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 70px; 
+            height: 70px; 
+            background: #27AE60; 
+            border: 6px solid #2D126B; /* Border mengikuti warna BG HP */
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: white; 
+            font-size: 28px; 
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        h2 { font-size: 18px; margin: 10px 0 5px; color: #333; font-weight: 700; }
+        p.sub { color: #888; font-size: 11px; margin-bottom: 20px; line-height: 1.4; }
+
+        .total-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+        .total { font-size: 24px; font-weight: 700; color: #333; margin-bottom: 20px; }
+
+        .detail-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+            text-align: left; 
+            margin-bottom: 20px; 
+        }
+
+        .detail-box { 
+            background: #fdfbff; 
+            border: 1px solid #f0f0f0; 
+            padding: 10px; 
+            border-radius: 12px; 
+        }
+
+        .detail-box label { font-size: 9px; color: #aaa; display: block; margin-bottom: 2px; }
+        .detail-box span { font-size: 11px; font-weight: 600; color: #444; word-wrap: break-word; }
+
+        .pdf-link { 
+            color: #7F3DFF; 
+            text-decoration: none; 
+            font-size: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 8px; 
+            margin-bottom: 25px; 
+            font-weight: 600;
+        }
+
+        .btn-selesai { 
+            background: #C19EFE; 
+            color: white; 
+            border: none; 
+            padding: 12px; 
+            border-radius: 12px; 
+            width: 100%; 
+            font-weight: 600; 
+            font-size: 14px;
+            cursor: pointer; 
+            box-shadow: 0 4px 12px rgba(193, 158, 254, 0.3);
+            transition: 0.3s;
+        }
+        
+        .btn-selesai:active { transform: scale(0.97); }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-wrapper">
+        <div class="card">
+            <div class="check-icon"><i class="fas fa-check"></i></div>
+            
+            <h2>Pembayaran Sukses!</h2>
+            <p class="sub">Terima kasih telah menggunakan layanan Sewa IP. Pesananmu sedang kami siapkan.</p>
+            
+            <div class="total-label">Total Pembayaran</div>
+            <div class="total">Rp 200.000</div>
+
+            <div class="detail-grid">
+                <div class="detail-box">
+                    <label>Paket</label>
+                    <span>Konten Kreator</span>
+                </div>
+                <div class="detail-box">
+                    <label>Tanggal</label>
+                    <span>22 Jan 2026</span>
+                </div>
+                <div class="detail-box">
+                    <label>Metode</label>
+                    <span>Bank Transfer</span>
+                </div>
+                <div class="detail-box">
+                    <label>Durasi</label>
+                    <span>24 Jam</span>
+                </div>
+            </div>
+
+            <a href="#" class="pdf-link">
+                <i class="fas fa-file-download"></i> Simpan Bukti Sewa (PDF)
+            </a>
+            
+            <button class="btn-selesai" onclick="window.location.href='sewaip-beranda.html'">
+                Kembali ke Beranda
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

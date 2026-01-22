@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa IP - Detail Mahasiswa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- 1. KONFIGURASI LAYAR HP DI TENGAH --- */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #F5F5F0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            min-height: 100vh; 
+        }
+
+        .mobile-wrapper { 
+            width: 325px;
+            height: 98vh;
+            background-color: white; 
+            border-radius: 45px; 
+             
+            overflow: hidden; 
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Area Konten yang Bisa di-Scroll */
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            scrollbar-width: none; 
+            padding-bottom: 70px; /* Jarak agar konten tidak tertutup footer ramping */
+        }
+        .scrollable-content::-webkit-scrollbar { display: none; }
+
+        /* --- 2. STYLE KOMPONEN DETAIL --- */
+        .header { padding: 20px; display: flex; align-items: center; }
+        .back-btn { 
+            width: 35px; height: 35px; background: white; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-decoration: none; color: #333; 
+        }
+        
+        .product-info { padding: 0 20px; }
+        .product-info h2 { margin: 5px 0; font-size: 20px; font-weight: 700; }
+        .rating { color: #BB86FC; font-size: 13px; margin-bottom: 15px; }
+        
+        .main-img { 
+            width: 100%; 
+            height: 180px; 
+            object-fit: cover; 
+            border-radius: 20px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        h4 { margin: 15px 0 10px; font-size: 15px; font-weight: 600; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .tag { padding: 6px 12px; border: 1px solid #f0f0f0; background: #fafafa; border-radius: 8px; font-size: 11px; color: #555; }
+        
+        .policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .policy-box { border: 1px solid #f0f0f0; padding: 10px; border-radius: 12px; font-size: 10px; color: #777; text-align: center; line-height: 1.4; display: flex; align-items: center; justify-content: center; min-height: 45px; }
+        
+        /* --- 3. FOOTER STICKY SESUAI KETENTUANMU --- */
+        .footer-sticky { 
+            position: absolute; 
+            bottom: 0; 
+            width: 100%; 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px); 
+            padding: 7px 20px 15px; 
+            box-sizing: border-box; 
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.05); 
+            border-top: 1px solid #f0f0f0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 5px; 
+        }
+
+        .price-text { 
+            font-weight: 700; 
+            font-size: 14px; 
+            color: #333; 
+            text-align: center; 
+        }
+
+        .btn-ajukan-detail {
+            display: block;
+            width: 100%;
+            background: #C19EFE;
+            color: white;
+            border: none;
+            padding: 7px 0; 
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(193, 158, 254, 0.2);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-wrapper">
+        <div class="scrollable-content">
+            <div class="header">
+                <a href="sewaip-beranda.html" class="back-btn"><i class="fas fa-chevron-left"></i></a>
+            </div>
+
+            <div class="product-info">
+                <h2>Mahasiswa</h2>
+                <div class="rating"><i class="fas fa-star"></i> 5.5</div>
+                <img src="mahasiswa.jpg" class="main-img" alt="Paket Mahasiswa">
+
+                <h4>Layanan yang didapat</h4>
+                <div class="tag-container">
+                    <div class="tag">Unit hp + charger</div>
+                    <div class="tag">Diskon 11,11%</div>
+                    <div class="tag">Ring light</div>
+                    <div class="tag">Mic clip on</div>
+                </div>
+
+                <h4>Kebijakan Sewa</h4>
+                <div class="policy-grid">
+                    <div class="policy-box">Tunjukkan kartu mahasiswa untuk diskon</div>
+                    <div class="policy-box">Keterlambatan denda Rp20.000/jam</div>
+                    <div class="policy-box">Kerusakan tanggung jawab penyewa</div>
+                    <div class="policy-box">Harga sewa hitungan /24Jam</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-sticky">
+            <div class="price-text">RP. 80.000 / 24 Jam</div>
+            <a href="sewaip-form.html" class="btn-ajukan-detail">Ajukan</a>
+        </div>
+    </div>
+
+</body>
+</html>
