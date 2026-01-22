@@ -1,0 +1,68 @@
+/* PENGATURAN LAYAR HP (MOBILE WRAPPER) */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0; /* Warna luar di laptop */
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-wrapper {
+    width: 100%;
+    max-width: 430px; /* Lebar HP */
+    min-height: 100vh;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    overflow-x: hidden;
+}
+
+/* NAVIGASI BAWAH */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 430px; /* Ikut lebar wrapper */
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 999;
+}
+
+.nav-item { color: #ccc; font-size: 24px; text-decoration: none; }
+.nav-item.active { color: #BB86FC; }
+
+/* TOMBOL UTAMA */
+.btn-main, .btn-ajukan-detail {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    background: #C19EFE;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* GAMBAR DAFTAR PAKET */
+.pkg-card img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.best-sewa-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
